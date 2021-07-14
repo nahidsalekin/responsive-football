@@ -9,12 +9,47 @@ body {
 
 
 /* ----------------
-    header styles 
+    header 
 ------------------*/
 
 header {
     padding: 20px 50px;
     background-color: #2D25A0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .nav-links li {
+    list-style: none;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.login-btn {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #E02C6D;
+    display: flex;
+    align-items: center;
+}
+
+.login-btn img {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
 }
 
 .header-banner {
@@ -43,6 +78,7 @@ header {
     text-decoration: none;
     color: white;
     padding: 10px 20px;
+    margin-bottom: 30px;
     background-color: #E02C6D;
 }
 
@@ -60,16 +96,16 @@ header {
     height: 438px;
 }
 
-main {
-    padding: 20px 150px;
-}
-
 
 /*-------------
- players area 
+    main 
 --------------*/
 
+
+/* players area  */
+
 .players-info {
+    padding: 20px 120px;
     margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -79,23 +115,98 @@ main {
 
 .player {
     background-color: white;
-    padding: 10px;
-    box-shadow: 1px 1px 8px 8px rgb(138 138 138 / 20%);
+    padding: 20px;
+    box-shadow: 1px 1px 8px 15px rgb(138 138 138 / 12%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.player img {
-    width: 300px;
-    height: 256px;
-    display: block;
-    margin: 0 auto;
+.player img,
+.player-name {
+    width: 100%;
+    height: auto;
 }
 
 
-/*------------------- 
-    highlight-area
---------------------*/
+/* prize money container  */
+
+.prize-money-container {
+    margin-top: 100px;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.prize-money-container fieldset {
+    border: 5px solid #2c4d54;
+}
+
+.prize-money-container .teams {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.prize-money-container .teams .team {
+    box-shadow: 1px 1px 8px 5px rgb(138 138 138 / 12%);
+    position: relative;
+}
+
+.prize-money-container .teams .team img {
+    width: 220px;
+    height: 150px;
+}
+
+.prize-money-container .teams .team figure figcaption {
+    text-align: center;
+}
+
+.prize-money-container .teams .team span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    font-family: cursive;
+    font-size: 30px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#ebfd53, #ffcb0d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: rotate(-45deg);
+}
+
+
+/* popular videos */
+
+.popular-videos {
+    margin-top: 100px;
+    text-align: center;
+    background-color: #dde2e6;
+    padding: 10px 0;
+}
+
+.videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.video iframe {
+    width: 100%;
+}
+
+.video h3 {
+    margin-top: 0;
+}
+
+
+/* highlight-area */
 
 .highlight-area {
+    padding: 20px 120px;
     margin-top: 150px;
     display: flex;
     justify-content: space-between;
@@ -124,6 +235,9 @@ main {
     height: 400px;
 }
 
+
+/* footer section  */
+
 footer {
     margin-top: 150px;
     display: flex;
@@ -133,7 +247,7 @@ footer {
     text-align: center;
 }
 
-footer img {
+footer>img {
     width: 483px;
     height: 110px;
 }
@@ -141,4 +255,128 @@ footer img {
 footer .social-icons img {
     width: 32px;
     height: 32px;
+}
+
+
+/* for tablet devices */
+
+@media only screen and (max-width: 1000px) {
+    header {
+        padding: 10px 20px;
+    }
+    .header-banner .banner-img img {
+        width: 400px;
+        height: 280px;
+    }
+    .banner-title h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .players-info {
+        padding: 25px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 15px;
+    }
+    /*
+    highlight-area
+    */
+    .highlight-area {
+        margin-top: 50px;
+        padding: 15px;
+        flex-direction: column;
+    }
+    .highlight-info h1 {
+        font-Size: 30px;
+    }
+    .highlight-info p {
+        font-size: 16px;
+        padding-right: 0;
+    }
+    .highlight-img img {
+        width: 100%;
+        height: auto;
+    }
+    .prize-money-container {
+        padding: 10px 0;
+    }
+    .prize-money-container .teams {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 20px;
+    }
+    .prize-money-container .teams .team img {
+        width: 100%;
+    }
+    .prize-money-container .teams .team span {
+        font-size: 25px;
+    }
+    footer>img {
+        width: 270px;
+        height: 60px;
+    }
+}
+
+
+/* for mobile devices */
+
+@media only screen and (max-width: 480px) {
+    header {
+        padding: 10px 20px;
+    }
+    .header-banner {
+        flex-direction: column;
+    }
+    .header-banner .banner-img img {
+        width: 300px;
+        height: 250px;
+    }
+    .banner-title h1 {
+        font-size: 36px;
+        line-height: 50px;
+    }
+    .players-info {
+        padding: 15px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 24px;
+    }
+    .player {
+        padding: 15px;
+        box-shadow: 1px 1px 8px 13px rgb(138 138 138 / 12%);
+    }
+    .player img,
+    .player-name {
+        height: auto;
+    }
+    /*
+    highlight-area
+    */
+    .highlight-area {
+        margin-top: 50px;
+        padding: 15px;
+        flex-direction: column;
+    }
+    .highlight-info h1 {
+        font-Size: 30px;
+    }
+    .highlight-info p {
+        font-size: 16px;
+        padding-right: 0;
+    }
+    .prize-money-container {
+        padding: 10px 0;
+    }
+    .prize-money-container .teams {
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 20px;
+    }
+    .prize-money-container .teams .team span {
+        font-size: 25px;
+    }
+    .prize-money-container .teams .team img {
+        width: 200px;
+        height: 140px;
+    }
+    footer>img {
+        width: 270px;
+        height: 60px;
+    }
 }
